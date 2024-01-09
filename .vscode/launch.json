@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/src/llmbench/chat/app.py",
+                "--browser.gatherUsageStats",
+                "false"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "DEBUG": "1",
+                "VERTEXAI_SEARCH_PROJECT_ID": "llmbenchllm",
+                "VERTEXAI_SEARCH_DATA_STORE_LOCATION": "global",
+                "VERTEXAI_SEARCH_DATA_STORE_ID": "opi0_1699280579473",
+                "VERTEXAI_LLAMA_ENDPOINT_ID": "8195832241209737216",
+                "VERTEXAI_FALCON_ENDPOINT_ID": "1826616468201013248"
+            }
+        }
+    ]
+}

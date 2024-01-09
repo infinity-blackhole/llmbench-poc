@@ -1,0 +1,27 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: llmbench-chat
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: 3
+    spec:
+      serviceAccountName: llmbench-service-account@appspot.gserviceaccount.com
+      containers:
+        - image: gcr.io/shikanime-studio-labs/llmbench-chat
+          ports:
+            - containerPort: 8501
+              name: http1
+          env:
+            - name: VERTEXAI_SEARCH_PROJECT_ID
+              value: shikanime-studio-labs
+            - name: VERTEXAI_SEARCH_DATA_STORE_LOCATION
+              value: global
+            - name: VERTEXAI_SEARCH_DATA_STORE_ID
+              value: scientific_1704814637510
+            - name: VERTEXAI_LLAMA_ENDPOINT_ID
+              value: "8195832241209737216"
+            - name: VERTEXAI_FALCON_ENDPOINT_ID
+              value: "1826616468201013248"

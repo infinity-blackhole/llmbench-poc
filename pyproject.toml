@@ -1,0 +1,19 @@
+[project]
+name = "llmbench_chat"
+version = "0.1.0"
+description = "Chatbot for LLM Bench"
+authors = [
+    {name = "William Phetsinorath", email = "william.phetsinorath.w@shikanime.studio"},
+]
+dependencies = [
+    "streamlit>=1.29.0",
+    "langchain>=0.0.344",
+    "google-cloud-aiplatform>=1.36.0",
+    "google-cloud-discoveryengine>=0.11.3",
+    "setuptools>=69.0.2",
+    "transformers>=4.35.2",
+    "langchain-vertexai-extended @ git+https://github.com/shikanime/langchain-vertexai-extended.git",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"

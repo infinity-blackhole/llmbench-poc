@@ -1,0 +1,17 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: llmbench-chat
+build:
+  artifacts:
+    - image: gcr.io/llmbenchllm/llmbench-chat
+      kaniko: {}
+  googleCloudBuild: {}
+manifests:
+  kustomize:
+    paths:
+      - manifests/base
+deploy:
+  cloudrun:
+    projectid: llmbenchllm
+    region: us-central1
